@@ -11,11 +11,11 @@ One of the key features of the Nuxt Overlay is its ability to render any compone
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 
-- [ &nbsp;[Online playground](https://stackblitz.com)](/CHANGELOG.md)
+- [Online playground]
   
   <!-- - [📖  Documentation](https://example.com) -->
 
-## Features
+# 💡Features
 
 <!-- Highlight some of the features your module provide here -->
 
@@ -30,7 +30,7 @@ One of the key features of the Nuxt Overlay is its ability to render any compone
 - Lightweight and fast, ensuring that your overlays won't slow down your website or impact performance.
 - Compatible with all modern browsers, ensuring that your overlays will work for all of your users, regardless of their device or browser choice.
 
-## Quick Setup
+# ⏳ Quick Setup
 
 1. Add `nuxt-overlay` dependency to your project:
 
@@ -55,9 +55,9 @@ export default defineNuxtConfig({
 
 That's it! You can now use Nuxt Overlay in your Nuxt app ✨
 
-# Usage
+# 🕹 Usage
 
-## Props:
+## 👾 Props:
 
 - **queueName** (string): The `queueName` is used to identify and differentiate between queues when rendering components. 
   
@@ -83,7 +83,7 @@ That's it! You can now use Nuxt Overlay in your Nuxt app ✨
   
   **default:** true
 
-## Api $overlay
+## 👾 Api $overlay
 
 - **$overlay.create**(`{}`)
 
@@ -147,7 +147,7 @@ function createNotification() {
 </script>
 ```
 
-## Component NuxtOverlay
+## 👾 Component
 
 ```html
 <template>
@@ -214,7 +214,7 @@ const positions = ref( [
 </script>
 ```
 
-## Slot Default
+## 👾 Slot Default
 
 The default slot that can be used to insert any Vue.js template code into the overlay. This slot allows developers to create custom content for their overlays, including text, images, forms, or any other elements that can be styled and rendered in a web browser.
 
@@ -246,7 +246,7 @@ The `itemQueue` props represents the current item being rendered in the queue. T
   </NuxtOverlay>
 ```
 
-## Configuration
+# ⚙️ Configuration
 
 "You can customize the default settings for the NuxtOverlay by modifying the `nuxtOverlay` object in your `app.config.ts` file. The available options include `queueName`, `position`, `closeOnClick`, and `duration`. Simply update the values for these options to match your desired configuration. You can also create additional configuration objects for specific use cases and use them when rendering the NuxtOverlay component. For more information on how to use app configuration in Nuxt, check out the Nuxt documentation."
 
@@ -261,6 +261,19 @@ export default defineAppConfig({
   }
 })
 ```
+
+# 🫵🏻 Contributing
+
+1. Clone this [repository](https://github.com/klaveren/nuxt-overlay)
+2. Install dependencies using `npm install`
+3. Run `npm run dev:prepare` to generate type stubs.
+4. Use `npm run dev` to start https://nuxt.com/modules/playground in development mode.
+
+# 📎 License
+
+[MIT License]((https://github.com/klaveren/nuxt-overlay/blob/main/LICENSE)
+
+
 
 [npm-version-src]: https://img.shields.io/npm/v/nuxt-overlay/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-version-href]: https://npmjs.com/package/nuxt-overlay
