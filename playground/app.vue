@@ -1,7 +1,7 @@
 <template>
   <div class="container"> 
     <div class="content">
-      <h1>Welcome to NuxtOverlay Component</h1>
+      <h1>Welcome to NuxtOverlay Playground Component</h1>
       <label for="duration">Set duration time in milliseconds</label>
       <input
         id="duration"
@@ -23,16 +23,28 @@
         </option>
       </select>
       <button
-        @click="$overlay.create({
+        @click="overlayCreate({
           queueName: select,
-          message: `${select} message`, 
-          icon: 'icon',
-          type: 'type',
-          duration
+          duration: 5000,
+          type: `success`,
+          text: `${select} message`,
+          icon: `icon`,
+          title: `Component title`,
+          color: 'green',
         })"
       >
         show in {{ select }}
       </button>
+
+      <h1>Configs</h1>
+      <pre>
+        {{ $overlay.getConfig() }}
+      </pre>
+
+      <h1>Queue</h1>
+      <pre>
+        {{ $overlay.getQueue() }}
+      </pre>
 
       <NuxtOverlay
         v-for="(position, index) in positions"
@@ -45,7 +57,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { useNuxtApp, ref } from "#imports";
+const { $overlay } = useNuxtApp()
+  
 const select = ref( 'top-left' )
 const duration = ref(5000)
 const positions = ref( [
@@ -60,6 +74,10 @@ const positions = ref( [
   'bottom-right',
 ])
 
+function overlayCreate(payload) {
+  $overlay.create(payload)
+}
+
 </script>
 <style lang="css" scoped>
   .container {
@@ -68,8 +86,7 @@ const positions = ref( [
     overflow: auto; /* Enable scroll if needed */
     top: 50%;
     left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%);
   }
   .content {
     position: relative;  /*Stay in place */
