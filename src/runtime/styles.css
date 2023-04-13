@@ -5,15 +5,18 @@ body {
 .overlay-container {
   background-color: transparent;
   position: fixed;
-  margin: 0;
+  margin: 2px;
+  overflow: auto; 
+  z-index: 9999 !important;
 }
 
 .overlay-content {
   background-color: transparent;
   position: relative;
+  display: block;
   width: auto;
-  z-index: 9999 !important;
 }
+
 .overlay-position-top-center {
   top: 0;
   left: 50%;
