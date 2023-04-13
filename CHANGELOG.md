@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.2.5
+
+
+### 📖 Documentation
+
+  - Update README (5c547a5)
+
+### 🎨 Styles
+
+  - Fix overlay-container z-index (0cb0343)
+
+### ❤️  Contributors
+
+- Henrique Van Klaveren ([@klaveren](http://github.com/klaveren))
+
 ## v0.2.4
 
 
