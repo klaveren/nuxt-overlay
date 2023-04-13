@@ -2,6 +2,8 @@
 
 ## v0.2.2
 
+- published on github
+
 ## v0.2.0
 
 - migrate nuxt-overlay-component to nuxt-overlay
