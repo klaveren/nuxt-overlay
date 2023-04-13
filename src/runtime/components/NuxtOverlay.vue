@@ -12,7 +12,6 @@
         class="overlay-content"
         @click="onClickClose(itemQueue.id)"
       >
-        {{ props.position || $overlay.getConfig().position }}
         <slot
           name="default"
           :item-queue="itemQueue"
@@ -56,7 +55,7 @@ const props = defineProps( {
     }
   } )
   async function onClickClose(id) {
-    if ( props.closeOnClick )
+    if ( props.closeOnClick || $overlay.getConfig().closeOnClick)
       await $overlay.remove( id, 1 )
   }
 </script>
