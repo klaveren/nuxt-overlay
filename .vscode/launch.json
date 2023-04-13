@@ -1,0 +1,78 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "client: chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "server: dev",
+      "args": ["dev"],
+      "osx": {
+        "program": "${workspaceFolder}/node_modules/.bin/nuxt"
+      },
+      "linux": {
+        "program": "${workspaceFolder}/node_modules/.bin/nuxt"
+      },
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/nuxt/bin/nuxt.js"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "server: generate",
+      "args": ["generate"],
+      "osx": {
+        "program": "${workspaceFolder}/node_modules/.bin/nuxt"
+      },
+      "linux": {
+        "program": "${workspaceFolder}/node_modules/.bin/nuxt"
+      },
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/nuxt/bin/nuxt.js"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "server: start",
+      "args": ["start"],
+      "osx": {
+        "program": "${workspaceFolder}/node_modules/.bin/nuxt"
+      },
+      "linux": {
+        "program": "${workspaceFolder}/node_modules/.bin/nuxt"
+      },
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/nuxt/bin/nuxt.js"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "server: build",
+      "args": ["build"],
+      "osx": {
+        "program": "${workspaceFolder}/node_modules/.bin/nuxt"
+      },
+      "linux": {
+        "program": "${workspaceFolder}/node_modules/.bin/nuxt"
+      },
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/nuxt/bin/nuxt.js"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "fullstack: nuxt",
+      "configurations": ["server: dev", "client: chrome"]
+    }
+  ]
+}

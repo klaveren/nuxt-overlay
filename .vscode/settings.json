@@ -1,0 +1,26 @@
+{
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.formatOnSave": true,
+  "vetur.validation.template": false,
+  "eslint.lintTask.enable": true,
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "terminal.integrated.localEchoStyle": "dim",
+  // "terminal.integrated.localEchoLatencyThreshold": 30,
+  // "terminal.integrated.confirmOnExit": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true,
+  "[xml]": {
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
+  }
+}
+å
