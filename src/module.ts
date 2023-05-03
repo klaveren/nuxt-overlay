@@ -7,9 +7,8 @@ import {
   installModule,
 } from "@nuxt/kit";
 import { name, version } from "../package.json";
-import type { ModuleOptions } from "./runtime/types";
 
-export default defineNuxtModule<ModuleOptions>({
+export default defineNuxtModule({
   meta: {
     name,
     version,
