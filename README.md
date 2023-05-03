@@ -1,4 +1,4 @@
-# NuxtOverlay
+# Welcome to NuxtOverlay
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -55,7 +55,7 @@ export default defineNuxtConfig({
 
 That's it! You can now use Nuxt Overlay in your Nuxt app ✨
 
-# 🕹 Usage
+# 🚀 Usage
 
 ## 👾 Props:
 
@@ -105,19 +105,13 @@ That's it! You can now use Nuxt Overlay in your Nuxt app ✨
 - **$overlay.remove**(`id: string, duration?: number`)
   
   Removes an item from the queue. The `id` parameter is the unique identifier of the item to be removed, and the `duration` parameter (optional) specifies the number of milliseconds to wait before removing the item. 
-  
-  
 
 - **$overlay.getQueue()**
   
   Returns an reactive array of all the items currently in the queue of the Nuxt Overlay Component. Each item in the array is an object containing the properties of the item, such as its type, text, icon, title, and color.
-  
-  
 
 - **$overlay.getConfig()**
   Returns the reactive current configuration of the Nuxt Overlay Component, including properties such as `closeOnClick`, `duration`, `position`, and `queueName`. 
-
-
 
 You can access the `$overlay` API directly inside a component's template or by importing it in a script tag. To access the API in the template, you can use the `$` prefix followed by the API name (e.g., `$overlay.getQueue()`). Here's an example of how to use `$overlay` in a component's template:
 
@@ -218,8 +212,6 @@ const positions = ref( [
 
 The default slot that can be used to insert any Vue.js template code into the overlay. This slot allows developers to create custom content for their overlays, including text, images, forms, or any other elements that can be styled and rendered in a web browser.
 
-
-
 The `itemQueue` props represents the current item being rendered in the queue. This parameter is typically used to access information about the item, such as its type, text, icon, title, and color, which can be used to dynamically update the content displayed in the overlay.
 
 ```html
@@ -272,8 +264,6 @@ export default defineAppConfig({
 # 📎 License
 
 [MIT License]((https://github.com/klaveren/nuxt-overlay/blob/main/LICENSE)
-
-
 
 [npm-version-src]: https://img.shields.io/npm/v/nuxt-overlay/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-version-href]: https://npmjs.com/package/nuxt-overlay
