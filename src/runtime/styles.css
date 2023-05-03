@@ -6,7 +6,7 @@ body {
   background-color: transparent;
   position: fixed;
   margin: 2px;
-  overflow: auto; 
+  overflow: auto;
   z-index: 9999 !important;
 }
 
@@ -26,35 +26,35 @@ body {
   top: 0;
   left: 0;
 }
-.overlay-position-top-right{
+.overlay-position-top-right {
   top: 0;
   right: 0;
 }
-.overlay-position-center{
+.overlay-position-center {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.overlay-position-center-left{
+.overlay-position-center-left {
   top: 50%;
   left: 0;
   transform: translate(0, -50%);
 }
-.overlay-position-center-right{
+.overlay-position-center-right {
   top: 50%;
   right: 0;
   transform: translate(0, -50%);
 }
-.overlay-position-bottom-left{
+.overlay-position-bottom-left {
   bottom: 0;
   left: 0;
 }
-.overlay-position-bottom-right{
+.overlay-position-bottom-right {
   bottom: 0;
   right: 0;
 }
 
-.overlay-position-bottom-center{
+.overlay-position-bottom-center {
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 0);
