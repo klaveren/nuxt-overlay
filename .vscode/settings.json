@@ -4,7 +4,8 @@
   "editor.formatOnSave": true,
   "vetur.validation.template": false,
   "eslint.lintTask.enable": true,
-  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabCompletion": "on",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
@@ -23,4 +24,3 @@
     "editor.defaultFormatter": "DotJoshJohnson.xml"
   }
 }
-å
