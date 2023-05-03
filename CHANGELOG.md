@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.2.6
+
+
+### 🚀 Enhancements
+
+  - Enable defaultFormatter and tabCompletion in vscode settings (3940581)
+
+### 🩹 Fixes
+
+  - Remove .vscode from git (cbf8f03)
+  - Remove defineNuxtModule T (eb68660)
+
+### 💅 Refactors
+
+  - Optimize code and fix plugin types (848d1cf)
+
+### 📖 Documentation
+
+  - Update README (5ba9d50)
+  - Update README (d67dc47)
+
+### ❤️  Contributors
+
+- Henrique Van Klaveren ([@klaveren](http://github.com/klaveren))
+
 ## v0.2.5
 
 
