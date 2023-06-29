@@ -3,7 +3,7 @@ body {
   padding: 0;
 }
 .overlay-container {
-  background-color: transparent;
+  background-color: burlywood;
   position: fixed;
   margin: 2px;
   overflow: auto;
@@ -18,44 +18,93 @@ body {
 }
 
 .overlay-position-top-center {
+  display: flex;
+  justify-content: center;
   top: 0;
   left: 50%;
   transform: translate(-50%, 0);
 }
+
 .overlay-position-top-left {
+  display: flex;
+  justify-content: flex-start;
   top: 0;
   left: 0;
 }
+
 .overlay-position-top-right {
+  display: flex;
+  justify-content: flex-end;
   top: 0;
   right: 0;
 }
+
 .overlay-position-center {
+  display: flex;
+  justify-content: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .overlay-position-center-left {
+  display: flex;
+  justify-content: flex-start;
   top: 50%;
   left: 0;
   transform: translate(0, -50%);
 }
+
 .overlay-position-center-right {
+  display: flex;
+  justify-content: flex-end;
   top: 50%;
   right: 0;
   transform: translate(0, -50%);
 }
+
 .overlay-position-bottom-left {
+  display: flex;
+  justify-content: flex-start;
   bottom: 0;
   left: 0;
 }
+
 .overlay-position-bottom-right {
+  display: flex;
+  justify-content: flex-end;
   bottom: 0;
   right: 0;
 }
 
 .overlay-position-bottom-center {
+  display: flex;
+  justify-content: center;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 0);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
