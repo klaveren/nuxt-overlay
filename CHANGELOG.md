@@ -1,5 +1,33 @@
 # Changelog
 
+## v0.2.7
+
+[compare changes](https://github.com/klaveren/NuxtOverlay/compare/v0.2.6...v0.2.7)
+
+
+### 🚀 Enhancements
+
+  - Upgrade nuxt ([99a660b](https://github.com/klaveren/NuxtOverlay/commit/99a660b))
+
+### 🩹 Fixes
+
+  - **module:** InstallModule("nuxt-config-schema") before use it. ([e59efcd](https://github.com/klaveren/NuxtOverlay/commit/e59efcd))
+  - **composables:** Update import form #imports ([4c18e85](https://github.com/klaveren/NuxtOverlay/commit/4c18e85))
+
+### 💅 Refactors
+
+  - **types:** Fix identantion ([ef58da3](https://github.com/klaveren/NuxtOverlay/commit/ef58da3))
+  - **component:** Optimize code ([3d7709c](https://github.com/klaveren/NuxtOverlay/commit/3d7709c))
+
+### 🎨 Styles
+
+  - Add to display and align positions with flex ([c516975](https://github.com/klaveren/NuxtOverlay/commit/c516975))
+  - Set overlay-container color to transparent ([7040a05](https://github.com/klaveren/NuxtOverlay/commit/7040a05))
+
+### ❤️  Contributors
+
+- Henrique Van Klaveren ([@klaveren](http://github.com/klaveren))
+
 ## v0.2.6
 
 
