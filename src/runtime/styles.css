@@ -3,7 +3,7 @@ body {
   padding: 0;
 }
 .overlay-container {
-  background-color: burlywood;
+  background-color: transparent;
   position: fixed;
   margin: 2px;
   overflow: auto;
