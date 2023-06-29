@@ -22,6 +22,7 @@ export default defineNuxtModule({
     const { resolve } = createResolver(import.meta.url);
     // expose the options to nuxt
     nuxt.options.css.push(resolve("./runtime/styles.css"));
+    installModule("nuxt-config-schema");
     nuxt.hook("schema:extend", (schemas) => {
       schemas.push({
         appConfig: {
@@ -73,8 +74,6 @@ export default defineNuxtModule({
         },
       });
     });
-
-    installModule("nuxt-config-schema");
 
     // add composables
     addImports({
