@@ -6,7 +6,7 @@ import type {
   OverlayConfig,
   INuxtOverlay,
 } from "./types";
-import { Ref, ref } from "vue";
+import { Ref, ref } from "#imports";
 
 export const useNuxtOverlay = (): INuxtOverlay => {
   const appConfig = useAppConfig();
