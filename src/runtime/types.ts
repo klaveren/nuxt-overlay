@@ -9,7 +9,7 @@ export interface OverlayConfig {
     | "center"
     | "center-right"
     | "bottom-left"
-    | " bottom-center"
+    | "bottom-center"
     | "bottom-right";
   queueName: string;
 }
