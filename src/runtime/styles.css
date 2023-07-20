@@ -8,13 +8,15 @@ body {
   margin: 2px;
   overflow: auto;
   z-index: 9999 !important;
+  display: flex;
+  flex-direction: column;
 }
 
 .overlay-content {
   background-color: transparent;
   position: relative;
-  display: block;
-  width: auto;
+  display: flex;
+  margin-bottom: 10px;
 }
 
 .overlay-position-top-center {
