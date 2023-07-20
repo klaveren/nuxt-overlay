@@ -28,9 +28,3 @@ export interface QueueRemove {
   duration?: number;
 }
 
-export interface INuxtOverlay {
-  getQueue: () => QueueItems[] | undefined;
-  create: (payload: QueueCreate) => Promise<void>;
-  remove: (id: string, duration: number) => Promise<void>;
-  getConfig: () => OverlayConfig;
-}
