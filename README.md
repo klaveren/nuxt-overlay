@@ -12,7 +12,7 @@ One of the key features of the Nuxt Overlay is its ability to render any compone
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 
 - [Online playground]
-
+  
   <!-- - [📖  Documentation](https://example.com) -->
 
 ## 💡Features
@@ -60,27 +60,27 @@ That's it! You can now use Nuxt Overlay in your Nuxt app ✨
 ### 👾 Props
 
 - **queueName** (string): The `queueName` is used to identify and differentiate between queues when rendering components.
-
+  
   **default:** "default"
 
 - **position**: The `position` parameter is used to specify the position of the overlay component rendered on the screen.
-
+  
   _top-left | top-center | top-right | center-left | center | center-right | bottom-left | bottom-center | bottom-right_
-
+  
   **default:** "top-center".
 
 - **width** (string | number): The `width` parameter is used to specify the width of the overlay component rendered by the Nuxt Overlay.
-
+  
   **default:** "33vw"
 
 - **duration** ( number | boolean): The `duration` property determines how long the overlay should be displayed (in milliseconds). If not provided, the default value from the `nuxtOverlayConfig` object will be used. Once the duration has elapsed, the overlay will automatically be removed.
-
+  
   When `duration` is set to `false`, the overlay component will only be removed when the user clicks on the component. This can be useful when you want to display a message or notification to the user that they need to acknowledge before it disappears.
-
+  
   **default:** 5000
 
 - **closeOnClick** (boolean) : The `closeOnClick` parameter is a boolean value that determines whether the Nuxt Overlay should be closed when the user clicks on it.
-
+  
   **default:** true
 
 ### 👾 Api $overlay
@@ -102,11 +102,11 @@ Adds a new item to the overlay queue with the specified `payload`. The `payload`
 The `[key: string]: any;` indicates that this object can accept any additional properties that are not explicitly defined in the interface. In other words, the interface expects an object that has at least an `id` property of type `string`, and may have any number of additional properties, with any key names and any values.
 
 - **$overlay.remove**(`id: string, duration?: number`)
-
+  
   Removes an item from the queue. The `id` parameter is the unique identifier of the item to be removed, and the `duration` parameter (optional) specifies the number of milliseconds to wait before removing the item.
 
 - **$overlay.getQueue()**
-
+  
   Returns an reactive array of all the items currently in the queue of the Nuxt Overlay Component. Each item in the array is an object containing the properties of the item, such as its type, text, icon, title, and color.
 
 - **$overlay.getConfig()**
@@ -119,8 +119,7 @@ You can access the `$overlay` API directly inside a component's template or by i
   <pre>
     {{ $overlay.getQueue() })
   </pre>
-  <template></template
-></template>
+<template>
 ```
 
 To import the API in a script tag, you can use the `useNuxtApp` function provided by Nuxt.js. Here's an example of how to import the `$overlay` API in a script tag:
@@ -141,7 +140,7 @@ function createNotification() {
 </script>
 ```
 
-### 👾 Component
+### 👾 Demo Component
 
 ```html
 <template>
@@ -173,7 +172,6 @@ function createNotification() {
     >
       show in {{ select }}
     </button>
-
     <NuxtOverlay
       v-for="(position, index) in positions"
       :key="index"
@@ -181,25 +179,23 @@ function createNotification() {
       :position="position"
     />
   </div>
-  <template>
-    <script setup lang="ts">
-      import { ref } from "vue";
-      const select = ref("top-center");
-      const duration = ref(5000);
-      const positions = ref([
-        "top-left",
-        "top-center",
-        "top-right",
-        "center-left",
-        "center",
-        "center-right",
-        "bottom-left",
-        "bottom-center",
-        "bottom-right",
-      ]);
-    </script></template
-  ></template
->
+  </template>
+  <script setup lang="ts">
+    import { ref } from "vue";
+    const select = ref("top-center");
+    const duration = ref(5000);
+    const positions = ref([
+      "top-left",
+      "top-center",
+      "top-right",
+      "center-left",
+      "center",
+      "center-right",
+      "bottom-left",
+      "bottom-center",
+      "bottom-right",
+    ]);
+  </script>
 ```
 
 ### 👾 Slot Default
@@ -212,7 +208,7 @@ The `itemQueue` props represents the current item being rendered in the queue. T
 <NuxtOverlay :queue-name="system-notify" :position="top-center" :width="50wh">
   <template #default="{ itemQueue }">
     <div :id="itemQueue.id">
-            <!-- custom alert component -->
+     <!-- custom alert component -->
       <AppAlert
         :options="{
             type: itemQueue.type,
@@ -253,7 +249,7 @@ export default defineAppConfig({
 
 ## 📎 License
 
-[MIT License]((<https://github.com/klaveren/nuxt-overlay/blob/main/LICENSE>)
+[MIT License](<https://github.com/klaveren/nuxt-overlay/blob/main/LICENSE>)
 
 [npm-version-src]: https://img.shields.io/npm/v/nuxt-overlay/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-version-href]: https://npmjs.com/package/nuxt-overlay
