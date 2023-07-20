@@ -1,12 +1,14 @@
+import type { QueueItems, QueueCreate, OverlayConfig } from "./types";
 import generateUniqueId from "./utils/generateUniqueId";
-import { useAppConfig } from "#imports";
-import type {
-  QueueItems,
-  QueueCreate,
-  OverlayConfig,
-  INuxtOverlay,
-} from "./types";
+import { useAppConfig } from "#app";
 import { Ref, ref } from "#imports";
+
+export interface INuxtOverlay {
+  getQueue: () => QueueItems[];
+  create: (payload: QueueCreate) => Promise<void>;
+  remove: (id: string, duration: number) => Promise<void>;
+  getConfig: () => OverlayConfig;
+}
 
 export const useNuxtOverlay = (): INuxtOverlay => {
   const appConfig = useAppConfig();
