@@ -1,5 +1,32 @@
 # Changelog
 
+## v0.2.8
+
+[compare changes](https://github.com/klaveren/NuxtOverlay/compare/v0.2.7...v0.2.8)
+
+
+### 🔥 Performance
+
+  - **composable:** Create interface INuxtOverlay ([1043eb2](https://github.com/klaveren/NuxtOverlay/commit/1043eb2))
+  - **plugin:** Update to import module interface from compasables ([d4ac25c](https://github.com/klaveren/NuxtOverlay/commit/d4ac25c))
+  - **type:** Remove INuxtOverlay ([1e54281](https://github.com/klaveren/NuxtOverlay/commit/1e54281))
+
+### 🩹 Fixes
+
+  - **style:** Fix to use display flex in overlay-content ([094da6e](https://github.com/klaveren/NuxtOverlay/commit/094da6e))
+
+### 📖 Documentation
+
+  - Update docs ([2249034](https://github.com/klaveren/NuxtOverlay/commit/2249034))
+
+### 🎨 Styles
+
+  - Update layout ([203bcf8](https://github.com/klaveren/NuxtOverlay/commit/203bcf8))
+
+### ❤️  Contributors
+
+- Klaveren ([@klaveren](http://github.com/klaveren))
+
 ## v0.2.7
 
 [compare changes](https://github.com/klaveren/NuxtOverlay/compare/v0.2.6...v0.2.7)
