@@ -1,5 +1,27 @@
 # Changelog
 
+## v0.2.9
+
+[compare changes](https://github.com/klaveren/NuxtOverlay/compare/v0.2.8...v0.2.9)
+
+### 🚀 Enhancements
+
+- **packages:** Update nuxt ([1d29ca8](https://github.com/klaveren/NuxtOverlay/commit/1d29ca8))
+
+### 🩹 Fixes
+
+- **PalygoundApp:** Update imports ([6f907ea](https://github.com/klaveren/NuxtOverlay/commit/6f907ea))
+- **composable:** Configure type of nuxtOverlayConfig ([cbe0774](https://github.com/klaveren/NuxtOverlay/commit/cbe0774))
+- **plugin:** Import INuxtOverlay as type ([db917a5](https://github.com/klaveren/NuxtOverlay/commit/db917a5))
+
+### 🎨 Styles
+
+- **NuxtOverlay:** Set ovarlay-content with overlay-position ([5aad557](https://github.com/klaveren/NuxtOverlay/commit/5aad557))
+
+### ❤️ Contributors
+
+- Klaveren ([@klaveren](http://github.com/klaveren))
+
 ## v0.2.8
 
 [compare changes](https://github.com/klaveren/NuxtOverlay/compare/v0.2.7...v0.2.8)

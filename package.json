@@ -1,6 +1,6 @@
 {
   "name": "nuxt-overlay",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -26,7 +26,8 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "latest"
+    "@nuxt/kit": "^3.8.0",
+    "typescript": "^5.2.2"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.1.1",
