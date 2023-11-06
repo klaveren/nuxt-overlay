@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.2.10
+
+[compare changes](https://github.com/klaveren/NuxtOverlay/compare/v0.2.9...v0.2.10)
+
+### 🩹 Fixes
+
+- **composables:** Remove imports ([0c91363](https://github.com/klaveren/NuxtOverlay/commit/0c91363))
+
+### ❤️ Contributors
+
+- Klaveren ([@klaveren](http://github.com/klaveren))
+
 ## v0.2.9
 
 [compare changes](https://github.com/klaveren/NuxtOverlay/compare/v0.2.8...v0.2.9)
