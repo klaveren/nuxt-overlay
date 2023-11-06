@@ -14,7 +14,10 @@
           .filter((item: QueueItems) => item.queueName === queueName)"
         :id="itemQueue.id"
         :key="itemQueue.id"
-        class="overlay-content"
+        :class="[
+          'overlay-content',
+          `overlay-position-${position || $overlay.getConfig().position}`,
+        ]"
         @click="onClickClose(itemQueue.id)"
       >
         <slot name="default" :item-queue="itemQueue">
@@ -57,6 +60,7 @@ const props = defineProps({
     required: false,
   },
 });
+
 async function onClickClose(id: string) {
   if (props.closeOnClick || $overlay.getConfig().closeOnClick)
     await $overlay.remove(id, 1);
