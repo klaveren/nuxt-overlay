@@ -54,7 +54,8 @@
 </template>
 
 <script setup>
-import { useNuxtApp, ref } from "#imports";
+import { useNuxtApp } from "#app";
+import { ref } from "#imports";
 const { $overlay } = useNuxtApp();
 
 const select = ref("top-left");
