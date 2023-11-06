@@ -1,7 +1,6 @@
 import type { QueueItems, QueueCreate, OverlayConfig } from "./types";
 import generateUniqueId from "./utils/generateUniqueId";
 import { useAppConfig } from "#app";
-import { Ref, ref } from "#imports";
 
 export interface INuxtOverlay {
   getQueue: () => QueueItems[];
