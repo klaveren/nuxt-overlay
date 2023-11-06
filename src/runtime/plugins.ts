@@ -1,5 +1,5 @@
-import { defineNuxtPlugin } from "#imports";
-import { INuxtOverlay, useNuxtOverlay } from "./composables";
+import { defineNuxtPlugin } from "#app";
+import { type INuxtOverlay, useNuxtOverlay } from "./composables";
 
 declare module "#app" {
   interface NuxtApp {
@@ -8,10 +8,9 @@ declare module "#app" {
 }
 
 export default defineNuxtPlugin(() => {
-  const overlay: INuxtOverlay = useNuxtOverlay();
   return {
     provide: {
-      overlay,
+      overlay: useNuxtOverlay(),
     },
   };
 });
