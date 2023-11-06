@@ -10,17 +10,17 @@ export interface INuxtOverlay {
   getConfig: () => OverlayConfig;
 }
 
-export const useNuxtOverlay = (): INuxtOverlay => {
+export function useNuxtOverlay(): Ref<INuxtOverlay> {
   const appConfig = useAppConfig();
 
   const queue: Ref<QueueItems[]> = ref([]);
 
-  const nuxtOverlayConfig: OverlayConfig = appConfig?.nuxtOverlay || {
+  const nuxtOverlayConfig: OverlayConfig = (appConfig?.nuxtOverlay || {
     closeOnClick: true,
     duration: 5000,
     position: "top-center",
     queueName: "default",
-  };
+  }) as OverlayConfig;
 
   const create = async (payload: QueueCreate): Promise<void> => {
     const uid = generateUniqueId(5);
@@ -41,7 +41,7 @@ export const useNuxtOverlay = (): INuxtOverlay => {
   const remove = async (id: string, duration: number): Promise<void> => {
     setTimeout(() => {
       queue.value.splice(
-        queue.value.findIndex((item) => item.id === id),
+        queue.value.findIndex((item: any) => item.id === id),
         1
       );
     }, duration);
@@ -60,4 +60,4 @@ export const useNuxtOverlay = (): INuxtOverlay => {
     getQueue,
     getConfig,
   };
-};
+}
