@@ -17,13 +17,13 @@ export interface OverlayConfig {
 }
 export interface QueueItems extends OverlayConfig {
   id: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 export interface QueueCreate {
   queueName?: string;
   closeOnClick?: boolean;
   duration?: number | false;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 export interface QueueRemove {
   id: string;

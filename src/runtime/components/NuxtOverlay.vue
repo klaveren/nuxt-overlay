@@ -13,7 +13,7 @@
       <div
         v-for="itemQueue in $overlay
           .getQueue()
-          .filter((item: QueueItems) => item.queueName === queueName)"
+          .filter((item: any) => item.queueName === queueName)"
         :id="itemQueue.id"
         :key="itemQueue.id"
         :class="[
@@ -39,12 +39,12 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useNuxtApp } from "#app";
-import { type QueueItems, type OverlayPosition } from "../types";
+import { type OverlayPosition } from "../types";
 const { $overlay } = useNuxtApp();
 
 interface Props {
-  position: OverlayPosition;
-  queueName: string;
+  position?: OverlayPosition;
+  queueName?: string;
   width?: string | number;
   closeOnClick?: boolean;
 }

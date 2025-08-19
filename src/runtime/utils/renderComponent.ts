@@ -3,7 +3,7 @@ import { type AppContext, type Component, createVNode, render } from "vue";
 interface RenderComponentOptions {
   el: Element | ShadowRoot;
   component: Component;
-  props?: Record<string, any>;
+  props?: Record<string, unknown>;
   appContext?: AppContext;
 }
 
@@ -21,8 +21,9 @@ export default function renderComponent({
 
   return () => {
     render(null, el);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error allow release
-    vnode = undefined;
+    // Explicitly clear reference to aid GC
+    vnode = createVNode({} as unknown as Component, undefined);
+    // Finally unmount to ensure container is clean
+    render(null, el);
   };
 }
