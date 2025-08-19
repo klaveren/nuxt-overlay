@@ -1,6 +1,6 @@
 {
   "name": "nuxt-overlay",
-  "version": "0.2.14",
+  "version": "0.2.15",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -29,6 +29,7 @@
     "typescript": "^5.9.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.33.0",
     "@nuxt/eslint-config": "^0.1.1",
     "@nuxt/kit": "^4.0.3",
     "@nuxt/module-builder": "^0.3.1",
@@ -39,7 +40,11 @@
     "changelogen": "^0.5.7",
     "defu": "^6.1.4",
     "eslint": "^9.33.0",
+    "eslint-plugin-vitest": "^0.5.4",
+    "eslint-plugin-vue": "^10.4.0",
     "nuxt": "^4.0.3",
-    "vitest": "^0.31.4"
+    "typescript-eslint": "^8.40.0",
+    "vitest": "^3.2.0",
+    "vue-eslint-parser": "^10.2.0"
   }
 }

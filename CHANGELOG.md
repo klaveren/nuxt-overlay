@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.2.15
+
+[compare changes](https://github.com/klaveren/NuxtOverlay/compare/v0.2.14...v0.2.15)
+
+### 🚀 Enhancements
+
+- Update to use nuxt 4 ([66a556d](https://github.com/klaveren/NuxtOverlay/commit/66a556d))
+
+### ❤️ Contributors
+
+- Henrique Van Klaveren <henrique.klaveren@brandshub.com.br>
+
 ## v0.2.14
 
 [compare changes](https://github.com/klaveren/NuxtOverlay/compare/v0.2.13...v0.2.14)
