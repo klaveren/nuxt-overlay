@@ -6,7 +6,9 @@
         `overlay-container`,
         `overlay-position-${position || $overlay.getConfig().position}`,
       ]"
-      :style="`width: ${width} !important`"
+      :style="{ width: computedWidth }"
+      role="status"
+      aria-live="polite"
     >
       <div
         v-for="itemQueue in $overlay
@@ -35,35 +37,32 @@
 </template>
 
 <script setup lang="ts">
-import { useNuxtApp } from "#imports";
-import { QueueItems } from "../types";
+import { computed } from "vue";
+import { useNuxtApp } from "#app";
+import { type QueueItems, type OverlayPosition } from "../types";
 const { $overlay } = useNuxtApp();
 
-const props = defineProps({
-  position: {
-    type: String,
-    required: false,
-    default: "top-center",
-  },
-  queueName: {
-    type: String,
-    required: false,
-    default: "default",
-  },
-  width: {
-    type: [Number, String],
-    required: false,
-    default: "33vw",
-  },
-  closeOnClick: {
-    type: Boolean,
-    required: false,
-  },
+interface Props {
+  position: OverlayPosition;
+  queueName: string;
+  width?: string | number;
+  closeOnClick?: boolean;
+}
+const props = withDefaults(defineProps<Props>(), {
+  position: "top-center",
+  queueName: "default",
+  width: "33vw",
 });
 
+const computedWidth = computed(() =>
+  typeof props.width === "number" ? `${props.width}px` : props.width
+);
+
 async function onClickClose(id: string) {
-  if (props.closeOnClick || $overlay.getConfig().closeOnClick)
-    await $overlay.remove(id, 1);
+  const shouldCloseOnClick =
+    props.closeOnClick === true ||
+    (props.closeOnClick === undefined && $overlay.getConfig().closeOnClick);
+  if (shouldCloseOnClick) await $overlay.remove(id, 1);
 }
 </script>
 

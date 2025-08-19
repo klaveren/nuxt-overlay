@@ -1,18 +1,21 @@
-import type { QueueItems, QueueCreate, OverlayConfig } from "./types";
+import { type QueueItems, type QueueCreate, type OverlayConfig } from "./types";
 import generateUniqueId from "./utils/generateUniqueId";
 import { useAppConfig } from "#app";
+import { ref } from "vue";
 
 export interface INuxtOverlay {
   getQueue: () => QueueItems[];
   create: (payload: QueueCreate) => Promise<void>;
-  remove: (id: string, duration: number) => Promise<void>;
+  remove: (id: string, duration?: number) => Promise<void>;
+  clear: (queueName?: string) => void;
+  removeByQueue: (queueName: string, duration?: number) => Promise<void>;
   getConfig: () => OverlayConfig;
 }
 
-export function useNuxtOverlay(): Ref<INuxtOverlay> {
+export function useNuxtOverlay(): INuxtOverlay {
   const appConfig = useAppConfig();
 
-  const queue: Ref<QueueItems[]> = ref([]);
+  const queue = ref<QueueItems[]>([]);
 
   const nuxtOverlayConfig: OverlayConfig = (appConfig?.nuxtOverlay || {
     closeOnClick: true,
@@ -23,30 +26,66 @@ export function useNuxtOverlay(): Ref<INuxtOverlay> {
 
   const create = async (payload: QueueCreate): Promise<void> => {
     const uid = generateUniqueId(5);
-    const duration = payload.duration || nuxtOverlayConfig.duration;
-    queue.value.push(
-      Object.assign({
-        ...payload,
-        id: uid.toString(),
-        queueName: payload.queueName || "default",
-        closeOnClick: payload.closeOnClick || nuxtOverlayConfig.closeOnClick,
-      })
-    );
 
-    // auto remove
-    if (duration) await remove(uid, duration);
+    const resolvedDuration =
+      payload.duration === undefined
+        ? nuxtOverlayConfig.duration
+        : payload.duration;
+
+    const item: QueueItems = {
+      ...payload,
+      id: String(uid),
+      queueName: payload.queueName ?? nuxtOverlayConfig.queueName ?? "default",
+      closeOnClick: payload.closeOnClick ?? nuxtOverlayConfig.closeOnClick,
+      duration: resolvedDuration as number | false,
+      position: nuxtOverlayConfig.position,
+    } as QueueItems;
+
+    queue.value.push(item);
+
+    if (typeof resolvedDuration === "number" && resolvedDuration > 0) {
+      await remove(uid, resolvedDuration);
+    }
   };
 
-  const remove = async (id: string, duration: number): Promise<void> => {
-    setTimeout(() => {
-      queue.value.splice(
-        queue.value.findIndex((item: any) => item.id === id),
-        1
+  const remove = async (id: string, duration?: number): Promise<void> => {
+    const executeRemoval = () => {
+      const indexToRemove = queue.value.findIndex(
+        (item: QueueItems) => item.id === id
       );
-    }, duration);
+      if (indexToRemove >= 0) {
+        queue.value.splice(indexToRemove, 1);
+      }
+    };
+
+    if (typeof duration === "number" && duration > 0) {
+      setTimeout(executeRemoval, duration);
+    } else {
+      executeRemoval();
+    }
   };
 
-  function getQueue(): QueueItems[] | undefined {
+  const clear = (queueName?: string): void => {
+    if (!queueName) {
+      queue.value = [];
+      return;
+    }
+    queue.value = queue.value.filter(
+      (item: QueueItems) => item.queueName !== queueName
+    );
+  };
+
+  const removeByQueue = async (
+    queueName: string,
+    duration?: number
+  ): Promise<void> => {
+    const idsToRemove = queue.value
+      .filter((q: QueueItems) => q.queueName === queueName)
+      .map((q: QueueItems) => q.id);
+    await Promise.all(idsToRemove.map((id: string) => remove(id, duration)));
+  };
+
+  function getQueue(): QueueItems[] {
     return queue.value;
   }
   function getConfig(): OverlayConfig {
@@ -56,6 +95,8 @@ export function useNuxtOverlay(): Ref<INuxtOverlay> {
   return {
     create,
     remove,
+    clear,
+    removeByQueue,
     getQueue,
     getConfig,
   };

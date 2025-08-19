@@ -48,6 +48,7 @@
         :key="index"
         :queue-name="position"
         :position="position"
+        width="33vw"
       />
     </div>
   </div>
@@ -55,7 +56,7 @@
 
 <script setup>
 import { useNuxtApp } from "#app";
-import { ref } from "#imports";
+import { ref } from "vue";
 const { $overlay } = useNuxtApp();
 
 const select = ref("top-left");

@@ -1,16 +1,18 @@
+export type OverlayPosition =
+  | "top-left"
+  | "top-center"
+  | "top-right"
+  | "center-left"
+  | "center"
+  | "center-right"
+  | "bottom-left"
+  | "bottom-center"
+  | "bottom-right";
+
 export interface OverlayConfig {
   closeOnClick: boolean;
   duration: number | false;
-  position:
-    | "top-left"
-    | "top-center"
-    | "top-right"
-    | "center-left"
-    | "center"
-    | "center-right"
-    | "bottom-left"
-    | "bottom-center"
-    | "bottom-right";
+  position: OverlayPosition;
   queueName: string;
 }
 export interface QueueItems extends OverlayConfig {
@@ -18,13 +20,12 @@ export interface QueueItems extends OverlayConfig {
   [key: string]: any;
 }
 export interface QueueCreate {
-  queueName: string;
+  queueName?: string;
   closeOnClick?: boolean;
-  duration: number | false;
+  duration?: number | false;
   [key: string]: any;
 }
 export interface QueueRemove {
   id: string;
   duration?: number;
 }
-

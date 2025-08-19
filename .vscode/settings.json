@@ -11,7 +11,7 @@
     "editor.formatOnSave": true
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "editor.quickSuggestions": {
     "strings": true
@@ -19,8 +19,8 @@
   "terminal.integrated.localEchoStyle": "dim",
   // "terminal.integrated.localEchoLatencyThreshold": 30,
   // "terminal.integrated.confirmOnExit": true,
-  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true,
-  "[xml]": {
-    "editor.defaultFormatter": "DotJoshJohnson.xml"
-  }
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true
+  // "[xml]": {
+  //   "editor.defaultFormatter": "DotJoshJohnson.xml"
+  // }
 }

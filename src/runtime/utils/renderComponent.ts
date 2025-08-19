@@ -1,13 +1,28 @@
-import { createVNode, render } from 'vue'
+import { type AppContext, type Component, createVNode, render } from "vue";
 
-export default function renderComponent({ el, component, props, appContext }) {
-  let vnode = createVNode(component, props)
-  vnode.appContext = { ...appContext }
-  render(vnode, el)
+interface RenderComponentOptions {
+  el: Element | ShadowRoot;
+  component: Component;
+  props?: Record<string, any>;
+  appContext?: AppContext;
+}
+
+export default function renderComponent({
+  el,
+  component,
+  props,
+  appContext,
+}: RenderComponentOptions) {
+  let vnode = createVNode(component, props);
+  if (appContext) {
+    vnode.appContext = { ...appContext };
+  }
+  render(vnode, el);
 
   return () => {
-    // destroy vnode
-    render(null, el)
-    vnode = undefined
-  }
+    render(null, el);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error allow release
+    vnode = undefined;
+  };
 }
