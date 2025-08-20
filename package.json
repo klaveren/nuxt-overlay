@@ -1,17 +1,32 @@
 {
   "name": "nuxt-overlay",
-  "version": "0.2.19",
+  "version": "0.2.20",
   "license": "MIT",
   "type": "module",
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+      "import": "./dist/module.mjs"
+    },
+    "./types": {
+      "types": "./dist/runtime/types/index.d.ts",
+      "import": "./dist/runtime/types/index.mjs"
     }
   },
-  "main": "./dist/module.cjs",
+  "main": "./dist/module.mjs",
+  "module": "./dist/module.mjs",
   "types": "./dist/types.d.ts",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/types.d.ts",
+        "./dist/runtime/types/index.d.ts"
+      ],
+      "composables": [
+        "./dist/runtime/composables.d.ts"
+      ]
+    }
+  },
   "files": [
     "dist"
   ],
