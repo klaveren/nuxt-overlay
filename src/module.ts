@@ -45,20 +45,24 @@ export default defineNuxtModule({
     const typeTemplate = addTemplate({
       filename: "types/nuxt-overlay.d.ts",
       getContents: () => `
-declare module '#app' {
-  interface NuxtApp {
-    $overlay: import('${resolve("./runtime/composables")}').INuxtOverlay
-  }
-}
+        declare module '#app' {
+          interface NuxtApp {
+            $overlay: import('${resolve("./runtime/types/")}').INuxtOverlay
+          }
+        }
 
-declare module 'vue' {
-  interface ComponentCustomProperties {
-    $overlay: import('${resolve("./runtime/composables")}').INuxtOverlay
-  }
-}
+        declare module 'nuxt/app' {
+          interface NuxtApp {
+            $overlay: import('${resolve("./runtime/types/")}').INuxtOverlay
+          }
+        }
 
-export {}
-`,
+        declare module 'vue' {
+          interface ComponentCustomProperties {
+            $overlay: import('${resolve("./runtime/types/")}').INuxtOverlay
+          }
+        }
+      `,
     });
 
     nuxt.hook("prepare:types", (opts) => {

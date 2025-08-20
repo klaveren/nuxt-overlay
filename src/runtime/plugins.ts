@@ -1,11 +1,5 @@
-import { defineNuxtPlugin } from "#app";
-import { type INuxtOverlay, useNuxtOverlay } from "./composables";
-
-declare module "#app" {
-  interface NuxtApp {
-    $overlay: INuxtOverlay;
-  }
-}
+import { defineNuxtPlugin } from "nuxt/app";
+import { useNuxtOverlay } from "./composables";
 
 export default defineNuxtPlugin(() => {
   return {

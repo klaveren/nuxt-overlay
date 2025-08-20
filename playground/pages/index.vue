@@ -7,8 +7,8 @@
 </template>
 
 <script setup>
-import { useNuxtApp } from "#app";
-const { $overlay } = useNuxtApp();
+// import { useNuxtApp } from "#app";
+// const { $overlay } = useNuxtApp();
 
 function notify() {
   $overlay.create({

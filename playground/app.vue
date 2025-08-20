@@ -55,8 +55,8 @@
 </template>
 
 <script setup>
-import { useNuxtApp } from "#app";
 import { ref } from "vue";
+import { useNuxtApp } from "nuxt/app";
 const { $overlay } = useNuxtApp();
 
 const select = ref("top-left");

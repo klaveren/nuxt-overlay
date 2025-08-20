@@ -1,11 +1,12 @@
 {
-  "extends": "./playground/.nuxt/tsconfig.json",
   "compilerOptions": {
-    "module": "esnext",
-    "paths": {
-      "#app": [
-        "./node_modules/nuxt/dist/app/index"
-      ]
-    }
-  }
+    "module": "ESNext",
+    "moduleResolution": "Bundler"
+    // "baseUrl": ".",
+    // "paths": {
+    //   "#imports": ["./runtime/composables/auto-imports.d.ts"]
+    // },
+    // "types": ["@nuxt/types", "node"]
+  },
+  "include": ["**/*.ts", "**/*.vue", "**/*.d.ts"]
 }

@@ -1,16 +1,12 @@
-import { type QueueItems, type QueueCreate, type OverlayConfig } from "./types";
+import {
+  type QueueItems,
+  type QueueCreate,
+  type OverlayConfig,
+  type INuxtOverlay,
+} from "./types/";
 import generateUniqueId from "./utils/generateUniqueId";
-import { useAppConfig } from "#app";
+import { useAppConfig } from "nuxt/app";
 import { ref } from "vue";
-
-export interface INuxtOverlay {
-  getQueue: () => QueueItems[];
-  create: (payload: QueueCreate) => Promise<void>;
-  remove: (id: string, duration?: number) => Promise<void>;
-  clear: (queueName?: string) => void;
-  removeByQueue: (queueName: string, duration?: number) => Promise<void>;
-  getConfig: () => OverlayConfig;
-}
 
 export function useNuxtOverlay(): INuxtOverlay {
   const appConfig = useAppConfig();
