@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.2.18
+
+[compare changes](https://github-klaveren/klaveren/nuxt-overlay/compare/v0.2.17...v0.2.18)
+
+### 🔥 Performance
+
+- Optimize types (f35041e)
+
+### ❤️ Contributors
+
+- HvKlaveren ([@klaveren](http://github.com/klaveren))
+
 ## v0.2.17
 
 [compare changes](https://github-klaveren/klaveren/nuxt-overlay/compare/v0.2.16...v0.2.17)
