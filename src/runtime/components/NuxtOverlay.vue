@@ -38,10 +38,9 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { type OverlayPosition, type INuxtOverlay } from "../types/index";
+import { type OverlayPosition } from "../types/index";
 import { useNuxtApp } from "nuxt/app";
-const nuxtApp = useNuxtApp();
-const $overlay = nuxtApp.$overlay as INuxtOverlay;
+const { $overlay } = useNuxtApp();
 
 interface Props {
   position?: OverlayPosition;

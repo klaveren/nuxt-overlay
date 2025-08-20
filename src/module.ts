@@ -3,7 +3,6 @@ import {
   addComponent,
   addImports,
   addPlugin,
-  addTemplate,
   createResolver,
 } from "@nuxt/kit";
 import { name, version } from "../package.json";
@@ -39,34 +38,6 @@ export default defineNuxtModule({
       name: "NuxtOverlay",
       global: true,
       filePath: resolve("./runtime/components/NuxtOverlay.vue"),
-    });
-
-    // provide type augmentations to consumer app
-    const typeTemplate = addTemplate({
-      filename: "types/nuxt-overlay.d.ts",
-      getContents: () => `
-        declare module '#app' {
-          interface NuxtApp {
-            $overlay: import('${resolve("./runtime/types/")}').INuxtOverlay
-          }
-        }
-
-        declare module 'nuxt/app' {
-          interface NuxtApp {
-            $overlay: import('${resolve("./runtime/types/")}').INuxtOverlay
-          }
-        }
-
-        declare module 'vue' {
-          interface ComponentCustomProperties {
-            $overlay: import('${resolve("./runtime/types/")}').INuxtOverlay
-          }
-        }
-      `,
-    });
-
-    nuxt.hook("prepare:types", (opts) => {
-      opts.references.push({ path: typeTemplate.dst });
     });
   },
 });

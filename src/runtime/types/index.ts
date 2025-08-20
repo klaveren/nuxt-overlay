@@ -43,13 +43,3 @@ export interface QueueRemove {
   id: string;
   duration?: number;
 }
-
-// Note: `$overlay` type augmentations are provided via the generated
-// template in `src/module.ts` to avoid duplicate declarations during
-// development and in consumer apps.
-
-declare module "@nuxt/schema" {
-  interface AppConfigInput {
-    nuxtOverlay?: Partial<OverlayConfig> & { queueName?: string };
-  }
-}
