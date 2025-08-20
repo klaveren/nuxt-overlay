@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.2.19
+
+[compare changes](https://github-klaveren/klaveren/nuxt-overlay/compare/v0.2.18...v0.2.19)
+
+### 🩹 Fixes
+
+- Types (db44cf8)
+
+### ❤️ Contributors
+
+- HvKlaveren ([@klaveren](http://github.com/klaveren))
+
 ## v0.2.18
 
 [compare changes](https://github-klaveren/klaveren/nuxt-overlay/compare/v0.2.17...v0.2.18)
