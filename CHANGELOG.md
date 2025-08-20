@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.21
+
+[compare changes](https://github-klaveren/klaveren/nuxt-overlay/compare/v0.2.20...v0.2.21)
+
 ## v0.2.20
 
 [compare changes](https://github-klaveren/klaveren/nuxt-overlay/compare/v0.2.19...v0.2.20)
